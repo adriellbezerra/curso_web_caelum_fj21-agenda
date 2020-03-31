@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
     import="java.util.*,
+    		java.text.SimpleDateFormat,
             br.com.caelum.agenda.dao.*,
             br.com.caelum.agenda.modelo.*"
     %>
@@ -12,7 +13,16 @@
 </head>
 <body>
 
-	<table>
+	<table border="1" align="center">
+	<caption>Tabela de Contados Cadastrados</caption>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Endereço</th>
+			<th>Nascimento</th>
+		</tr>
+	</thead>
 	<%
     ContatoDao dao = new ContatoDao();
     List<Contato> contatos = dao.getLista();
@@ -23,7 +33,10 @@
     	<td><%= contato.getNome()%></td>
     	<td><%= contato.getEmail()%></td>
     	<td><%= contato.getEndereco()%></td>
-    	<td><%= contato.getDataNascimento().getTime()%></td>
+    	<%
+    	SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy");
+    	%>
+    	<td><%= f.format(contato.getDataNascimento().getTime())%></td>
     </tr>
     <%
     }
