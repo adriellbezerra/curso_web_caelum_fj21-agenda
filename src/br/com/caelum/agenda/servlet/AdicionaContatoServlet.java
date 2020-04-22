@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.text.ParseException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +38,7 @@ public class AdicionaContatoServlet extends HttpServlet {
 
 		// fazendo a conversão da data
 		try {
-			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto);
+			Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dataEmTexto);
 			dataNascimento = Calendar.getInstance();
 			dataNascimento.setTime(date);
 		} catch (ParseException e) {
@@ -55,15 +56,8 @@ public class AdicionaContatoServlet extends HttpServlet {
 		ContatoDao dao = new ContatoDao();
 		dao.adiciona(contato);
 
-		// imprime o nome do contato que foi adicionado
-		out.println("<html>");
-		out.println("<head>");
-		out.println("<title></title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("Contato " + contato.getNome() + " adicionado com sucesso");
-		out.println("</body>");
-		out.println("</html>");
+		RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");
+		rd.forward(request, response);
 
 	}
 
