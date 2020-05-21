@@ -22,6 +22,7 @@
 			<th>Email</th>
 			<th>Endereço</th>
 			<th>Nascimento</th>
+			<th>Remover</th>
 		</tr>
 	</thead>
 		
@@ -43,6 +44,7 @@
 				</td>
 				<td>${contato.endereco}</td>
 				<td>${contato.dataFormatada()}</td>
+				<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a></td>
 			</tr>
 		</c:forEach>
 	</table>
