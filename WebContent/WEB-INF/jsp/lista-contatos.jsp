@@ -22,7 +22,6 @@
 			<th>Email</th>
 			<th>Endereço</th>
 			<th>Nascimento</th>
-			<th>Remover</th>
 		</tr>
 	</thead>
 		
@@ -45,6 +44,7 @@
 				<td>${contato.endereco}</td>
 				<td>${contato.dataFormatada()}</td>
 				<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a></td>
+				<td><a href="mvc?logica=AlteraContatoLogicAuxiliar&id=${contato.id}">Alterar</a>
 			</tr>
 		</c:forEach>
 	</table>

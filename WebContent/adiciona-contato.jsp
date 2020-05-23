@@ -12,7 +12,7 @@
 
 	<h1>Adiciona Contatos</h1>
 	<hr />
-	<form action="adicionaContato" method="post">
+	<form action="mvc?logica=AlteraContatoLogic" method="post">
 		Nome: <input type="text" name="nome" /><br />
 		E-mail: <input type="text" name="email" /><br />
 		Endereço: <input type="text" name="endereco" /><br />
