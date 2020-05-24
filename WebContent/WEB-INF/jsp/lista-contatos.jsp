@@ -10,12 +10,15 @@
 	
 	<c:import url="cabecalho.jsp"/>
 	
-	<!-- Cria o DAO 
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/> -->
+	<div align="center">
+		<a href="mvc?logica=AdicionaContatoLogicAuxiliar">ADICIONAR CONTATO</a><br>
+	</div>
 	
+	<hr/>
+		
 	<div align="center">
 	<table border="1">
-	<caption>Tabela de Contados Cadastrados</caption>
+	<caption>TABELA DE CONTATOS CADASTRADOS</caption>
 	<thead>
 		<tr>
 			<th>Nome</th>
